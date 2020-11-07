@@ -67,3 +67,34 @@ Then it is needed to compile the MT library. It is done with following commands:
         cd MT/src/
         make   
 ```
+# ARPACK
+
+Next step is to compile ARPACK library. It is needed to download 2 seperate archives. Obtain it from (https://www.caam.rice.edu/software/ARPACK/SRC/arpack96.tar.gz) and (https://www.caam.rice.edu/software/ARPACK/SRC/patch.tar.gz)
+
+
+```example
+wget https://www.caam.rice.edu/software/ARPACK/SRC/arpack96.tar.gz
+wget https://www.caam.rice.edu/software/ARPACK/SRC/patch.tar.gz
+```
+
+Then unpack files with tar commands
+
+```example
+tar xvf arpack96.tar.gz
+tar xvf patch.tar.gz
+```
+
+In `ARPACK/ARmake.inc` change:
+    -   `home = $(HOME)/ARPACK` to your ARPACK directory
+    -   `PLAT = SUN4` to `PLAT = linux`
+    -   `FC = f77` to `FC = gfortran`
+    -   `FFLAGS = -O -cg89` to `FFLAGS = -O2`
+    -   `MAKE = /bin/make` to `MAKE = make`
+    -   `SHELL = /bin/sh` to `SHELL = shell`
+In `ARPACK/UTIL/second.f` change: `EXTERNAL ETIME` to `*EXTERNAL ETIME`
+
+Then mowe to ARPACK directory and run:
+
+```example
+make lib   
+```
