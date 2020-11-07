@@ -84,14 +84,14 @@ tar xvf arpack96.tar.gz
 tar xvf patch.tar.gz
 ```
 
-In `ARPACK/ARmake.inc` change:
+- In `ARPACK/ARmake.inc` change:
     -   `home = $(HOME)/ARPACK` to your ARPACK directory
     -   `PLAT = SUN4` to `PLAT = linux`
     -   `FC = f77` to `FC = gfortran`
     -   `FFLAGS = -O -cg89` to `FFLAGS = -O2`
     -   `MAKE = /bin/make` to `MAKE = make`
     -   `SHELL = /bin/sh` to `SHELL = shell`
-In `ARPACK/UTIL/second.f` change: `EXTERNAL ETIME` to `*EXTERNAL ETIME`
+- In `ARPACK/UTIL/second.f` change: `EXTERNAL ETIME` to `*EXTERNAL ETIME`
 
 Then mowe to ARPACK directory and run:
 
