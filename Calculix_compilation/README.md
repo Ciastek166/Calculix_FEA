@@ -64,8 +64,8 @@ make lib
 Then it is needed to compile the MT library. It is done with following commands:
 
 ```example
-        cd MT/src/
-        make   
+cd MT/src/
+make   
 ```
 # ARPACK
 
@@ -126,3 +126,4 @@ Then it is possible to compile Calculix with:
 ```example
 make
 ```
+Happy meshing!
