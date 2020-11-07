@@ -1,7 +1,7 @@
 # Calculix
 To use Calculix in multithreading mode it is needed to compile from source. In order to do so it is necessary to compile ARPACK and SPOOLES library nad install the required tools. The code which is presented here is already changed and ready for compilation.
 
-#Tools
+# Tools
 1. Install the required tools for Calculix:
     -   gfortran
     -   make
@@ -38,4 +38,4 @@ mkdir SPOOLES.2.2
 mv spooles.2.2.tgz SPOOLES.2.2
 cd SPOOLES.2.2
 tar xvf spooles.2.2.tgz
-```example 
+```example
