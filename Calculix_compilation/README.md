@@ -29,7 +29,7 @@ SPOOLES library should be obtained from this site (http://www.netlib.org/linalg/
 
 ```example
 wget http://www.netlib.org/linalg/spooles/spooles.2.2.tgz
-``` example
+```
 
 After downloading the file, it is mandatory to create folder SPOOLES.2.2. move the archive there and unpack it. It can be done with the following commands:
 
