@@ -1,5 +1,5 @@
 # Calculix
-To use Calculix in multithreading mode it is needed to compile from source. In order to do so it is necessary to compile ARPACK and SPOOLES library nad install the required tools. The code which is presented here is already changed and ready for compilation.
+To use Calculix in multithreading mode it is needed to compile from source. In order to do so it is necessary to compile ARPACK and SPOOLES library nad install the required tools. The code which is presented here is already changed and ready for compilation. Please read the original documentation first from http://www.dhondt.de/ccx_2.17.README.INSTALL
 
 # Tools
 1. Install the required tools for Calculix:
@@ -25,7 +25,7 @@ sudo apt-get install gfortran make f2c liblapack3 liblapack-dev libexodusii-dev 
 
 # SPOOLES
 
-SPOOLES library should be obtained from this site (http://www.netlib.org/linalg/spooles/spooles.2.2.tgz) using wget command.
+SPOOLES library should be obtained from this site http://www.netlib.org/linalg/spooles/spooles.2.2.tgz using wget command.
 
 ```example
 wget http://www.netlib.org/linalg/spooles/spooles.2.2.tgz
@@ -69,7 +69,7 @@ Then it is needed to compile the MT library. It is done with following commands:
 ```
 # ARPACK
 
-Next step is to compile ARPACK library. It is needed to download 2 seperate archives. Obtain it from (https://www.caam.rice.edu/software/ARPACK/SRC/arpack96.tar.gz) and (https://www.caam.rice.edu/software/ARPACK/SRC/patch.tar.gz)
+Next step is to compile ARPACK library. It is needed to download 2 seperate archives. Obtain it from https://www.caam.rice.edu/software/ARPACK/SRC/arpack96.tar.gz and https://www.caam.rice.edu/software/ARPACK/SRC/patch.tar.gz
 
 
 ```example
@@ -97,4 +97,32 @@ Then mowe to ARPACK directory and run:
 
 ```example
 make lib   
+```
+# Calculix compilation
+
+Obtain Calculix source code from: http://www.dhondt.de/ccx_2.17.src.tar.bz2 using wget to your Calculix directory.
+
+```example
+wget http://www.dhondt.de/ccx_2.17.src.tar.bz2
+```
+To unpack archieve use:
+```example
+bunzip2 ccx_2.17.src.tar.bz2
+tar xvf ccx_2.17.src.tar
+```
+In order to compile Calculix in multithreading mode it is needed to change the Makefile from singlethread to multithread one. It can be simply done by:
+
+```example
+cd CalculiX/ccx_2.17/src
+mv Makefile Makefile_ST
+mv Makefile_MT Makefile
+```
+- In `Makefile` change:
+    -   `CC=cc` to `CC=gcc`
+    - in 15 line   `../../../ARPACK/libarpack_INTEL.a \` to `../../../ARPACK/libarpack_linux.a \`
+
+Then it is possible to compile Calculix with:
+
+```example
+make
 ```
