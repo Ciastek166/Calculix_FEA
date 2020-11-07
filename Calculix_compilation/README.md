@@ -126,4 +126,4 @@ Then it is possible to compile Calculix with:
 ```example
 make
 ```
-Happy meshing!
+Happy meshing! 
