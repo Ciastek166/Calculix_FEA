@@ -1,17 +1,13 @@
-*include, input=mesh.inp
-
-*material, name=steel
-*elastic
-210000,0.3
-*density
-7.85e-9
-
-*solid section, elset=Eall, material=steel, 
 
 
-*step
+*include, input=fork.msh
+*include, input=add_material.inp
+
+
+1
+*STEP
 *frequency
 10
-*node file
+*NODE FILE
 U
-*end step
+*END STEP
